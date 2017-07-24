@@ -11,7 +11,17 @@ angular
             .state('pattern', {
                 url: '/pattern?:name',
                 templateUrl: 'js/pages/pattern/pattern.html',
+                params: {
+                    name: '',
+                    filter: ['baby']
+                },
                 controller: 'PatternController',
+                controllerAs: 'vm'
+            })
+            .state('search', {
+                url: '/search?:name',
+                templateUrl: 'js/pages/search/search.html',
+                controller: 'SearchController',
                 controllerAs: 'vm'
             });
 

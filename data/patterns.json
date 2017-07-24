@@ -1,0 +1,56 @@
+{
+  Name: '',
+  Subtitle: '',
+  BeautyText: '',// may need to be html.
+  Sizing: ?,
+  Yarns [
+    {
+      Name: '',
+      Brand: '',
+      Weight: ''// ?
+    },
+    ...
+  ],
+  Needles: [
+    {
+      Size: '',
+      Type: '',// circular or dpn
+      Length: ''// only applicable to circular needles
+    },
+    ...
+  ],
+  Book: '',//. Book Name
+  RelatedPatterns: [
+    '',// Pattern Name
+    ...
+  ],
+  PurchaseLink: '',
+  RavelryUrl: '',
+  RavelryButton: '',// html for the button?
+  Type: '',// One of Garment, Hands, Feet, Hat, Neck, Home?
+  RecommendedYarnWeight: [
+    '',// One of Lace, Sock, Sport, DK, Worsted/Aran, Bulky
+    ...
+  ],
+  Attributes: [
+    ?
+  ],
+  Construction: [
+    '',// One of Colourwork, Cables, Texture, Lace, Basic Knit & Purl?
+    ...
+  ],
+  RelatedTutorials: [
+    '',// Tutorial Name
+    ...
+  ],
+  Difficulty: '',// One of Beginner, Intermediate or Advanced
+  LaunchDate: '',
+  PriceCategory: '',// One of Free, 5 or 7 (maybe think of better names?)
+  Popularity: ?,// Number of Ravelry projects - to be scraped from ravelry regularly
+  BlgPosts: [
+    '',// One or more URLs
+    ...
+  ],
+  Notes: '',// Free Text or HTML?
+  DescriptionType: ''// One of Text, Charts or Both
+}

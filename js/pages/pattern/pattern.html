@@ -1,3 +1,60 @@
 <div>
-    <div>PATTERN</div>
+    <div id="Name">{{ vm.name }}</div>
+    <div id="Subtitle">{{ vm.subtitle }}</div>
+    <div id="BeautyText">{{ vm.beautyText }}</div>
+    <!-- Sizing: ?, -->
+    <div id="Yarns">
+        <div ng-repeat="yarns in vm.yarns">
+            <div>{{ yarns.name }}</div>
+            <div>{{ yarns.brand }}</div>
+            <div>{{ yarns.weight }}</div>
+        </div>
+    </div>
+    <div id="Needles">
+        <div ng-repeat="needles in vm.needles">
+            <div>{{ needles.size }}</div>
+            <!-- circular or dpn -->
+            <div>{{ needles.type }}</div>
+            <!-- only applicable to circular needles -->
+            <div ng-show="needles.Type === 'circular">{{ needles.length }}</div>
+        </div>
+    </div>
+    <div id="Book">{{ vm.book }}</div>
+    <div>
+        <div id="RelatedPatterns" ng-repeat="pattern in vm.relatedPatterns">{{ pattern }}</div>
+    </div>
+    <div id="PurchaseLink">{{ vm.purchaseLink }}</div>
+    <div id="RavelryUrl">{{ vm.ravelryUrl }}</div>
+        <!-- html for the button? -->
+    <div id="RavelryButton">{{ vm.ravelryButton }}</div>
+    <!-- One of Garment, Hands, Feet, Hat, Neck, Home? -->
+    <div id="Type">{{ vm.type }}</div>
+    <div>
+        <!-- One of Lace, Sock, Sport, DK, Worsted/Aran, Bulky -->
+        <div id="RecommendedYarnWeight" ng-repeat="weight in vm.recommendedYarnWeight">{{ weight }}</div>
+    </div>
+    <div>
+        <div id="Attributes" ng-repeat="attribute in vm.attributes">{{ attribute }}</div>
+    </div>
+    <div>
+        <!-- One of Colourwork, Cables, Texture, Lace, Basic Knit & Purl? -->
+        <div id="Construction" ng-repeat="method in vm.construction">{{ method }}</div>
+    </div>
+    <div>
+        <div id="RelatedTutorials" ng-repeat="tutorial in vm.relatedTutorials">{{ tutorial }}</div>
+    </div>
+    <!-- One of Beginner, Intermediate or Advanced -->
+    <div id="Difficulty">{{ vm.difficulty }}</div>
+    <div id="LaunchDate">{{ vm.launchDate }}</div>
+    <!-- One of Free, 5 or 7 (maybe think of better names?) -->
+    <div id="PriceCategory">{{ vm.priceCategory }}</div>
+    <!-- Number of Ravelry projects - to be scraped from ravelry regularly -->
+    <div id="Popularity">{{ vm.popularity }}</div>
+    <div>
+        <a id="BlogPosts" ng-repeat="article in vm.blogPosts" href="{{ article.url }}">{{ article.name }}</a>
+    </div>
+    <!-- Free Text or HTML? -->
+    <div id="Notes">{{ vm.notes }}</div>
+    <!-- // One of Text, Charts or Both  -->
+    <div id="DescriptionType">{{ vm.descriptionType }}</div>
 </div>
