@@ -5,44 +5,50 @@
         .module('tck')
         .controller('PatternController', PatternController);
 
-    PatternController.$inject = ['$stateParams'];
+    PatternController.$inject = ['$stateParams', 'PatternService'];
 
-    function PatternController($stateParams) {
+    function PatternController($stateParams, patternService) {
         var vm = this;
 
         // Functions
 
         // Variables
-        vm.name = '';
-        vm.subtitle = '';
-        vm.beautyText = '';
-        vm.yarns = {};
-        vm.needles = {};
-        vm.book = '';
-        vm.relatedPatterns = '';
-        vm.purchaseLink = '';
-        vm.ravelryUrl = '';
-        vm.ravelryButton = '';
-        vm.type = '';
-        vm.recommendedYarnWeight = '';
-        vm.attributes = '';
-        vm.construction = '';
-        vm.relatedTutorials = '';
-        vm.difficulty = '';
-        vm.launchDate = '';
-        vm.priceCategory = '';
-        vm.popularity = '';
-        vm.blogPosts = '';
-        vm.notes = '';
-        vm.descriptionType = '';
+        vm.pattern = {};
+        // vm.pattern.name = '';
+        // vm.pattern.subtitle = '';
+        // vm.pattern.beautyText = '';
+        // vm.pattern.yarns = {};
+        // vm.pattern.needles = {};
+        // vm.pattern.book = '';
+        // vm.pattern.relatedPatterns = '';
+        // vm.pattern.purchaseLink = '';
+        // vm.pattern.ravelryUrl = '';
+        // vm.pattern.ravelryButton = '';
+        // vm.pattern.type = '';
+        // vm.pattern.recommendedYarnWeight = '';
+        // vm.pattern.attributes = '';
+        // vm.pattern.construction = '';
+        // vm.pattern.relatedTutorials = '';
+        // vm.pattern.difficulty = '';
+        // vm.pattern.launchDate = '';
+        // vm.pattern.priceCategory = '';
+        // vm.pattern.popularity = '';
+        // vm.pattern.blogPosts = '';
+        // vm.pattern.notes = '';
+        // vm.pattern.descriptionType = '';
 
         // Constructor
         activate();
 
         function activate() {
             console.log('pattern');
-            vm.name = $stateParams.name
-            console.log($stateParams.filter);
+            patternService.get($stateParams.name)
+                .then(function (response) {
+                    vm.pattern = response;
+                })
+                .catch(function (error) {
+                    console.log('indicate to user that no pattern with that name exists?  or redirect ', error);
+                })
         }
     }
 })();

@@ -1,17 +1,23 @@
 <div>
-    <div id="Name">{{ vm.name }}</div>
-    <div id="Subtitle">{{ vm.subtitle }}</div>
-    <div id="BeautyText">{{ vm.beautyText }}</div>
-    <!-- Sizing: ?, -->
+    <div id="Name">{{ vm.pattern.name }}</div>
+    <div id="Subtitle">{{ vm.pattern.subtitle }}</div>
+    <div id="BeautyText">{{ vm.pattern.beautyText }}</div>
+    <div>
+        <div ng-repeat="columnName vm.pattern.sizing.columns">{{ columnName }}</div>
+        <div ng-repeat="row in vm.pattern.sizing.rows">
+            <div ng-repeat="value in row">{{ value }}</div>
+        </div>
+    </div>
     <div id="Yarns">
-        <div ng-repeat="yarns in vm.yarns">
+        <div ng-repeat="yarns in vm.pattern.yarns">
             <div>{{ yarns.name }}</div>
             <div>{{ yarns.brand }}</div>
+            <div>{{ yarns.weight }}</div>
             <div>{{ yarns.weight }}</div>
         </div>
     </div>
     <div id="Needles">
-        <div ng-repeat="needles in vm.needles">
+        <div ng-repeat="needles in vm.pattern.needles">
             <div>{{ needles.size }}</div>
             <!-- circular or dpn -->
             <div>{{ needles.type }}</div>
@@ -19,42 +25,42 @@
             <div ng-show="needles.Type === 'circular">{{ needles.length }}</div>
         </div>
     </div>
-    <div id="Book">{{ vm.book }}</div>
+    <div id="Book">{{ vm.pattern.book }}</div>
     <div>
-        <div id="RelatedPatterns" ng-repeat="pattern in vm.relatedPatterns">{{ pattern }}</div>
+        <div id="RelatedPatterns" ng-repeat="pattern in vm.pattern.relatedPatterns">{{ pattern }}</div>
     </div>
-    <div id="PurchaseLink">{{ vm.purchaseLink }}</div>
-    <div id="RavelryUrl">{{ vm.ravelryUrl }}</div>
+    <div id="PurchaseLink">{{ vm.pattern.purchaseLink }}</div>
+    <div id="RavelryUrl">{{ vm.pattern.ravelryUrl }}</div>
         <!-- html for the button? -->
-    <div id="RavelryButton">{{ vm.ravelryButton }}</div>
+    <div id="RavelryButton">{{ vm.pattern.ravelryButton }}</div>
     <!-- One of Garment, Hands, Feet, Hat, Neck, Home? -->
-    <div id="Type">{{ vm.type }}</div>
+    <div id="Type">{{ vm.pattern.type }}</div>
     <div>
         <!-- One of Lace, Sock, Sport, DK, Worsted/Aran, Bulky -->
-        <div id="RecommendedYarnWeight" ng-repeat="weight in vm.recommendedYarnWeight">{{ weight }}</div>
+        <div id="RecommendedYarnWeight" ng-repeat="weight in vm.pattern.recommendedYarnWeight">{{ weight }}</div>
     </div>
     <div>
-        <div id="Attributes" ng-repeat="attribute in vm.attributes">{{ attribute }}</div>
+        <div id="Attributes" ng-repeat="attribute in vm.pattern.attributes">{{ attribute }}</div>
     </div>
     <div>
         <!-- One of Colourwork, Cables, Texture, Lace, Basic Knit & Purl? -->
-        <div id="Construction" ng-repeat="method in vm.construction">{{ method }}</div>
+        <div id="Construction" ng-repeat="method in vm.pattern.construction">{{ method }}</div>
     </div>
     <div>
-        <div id="RelatedTutorials" ng-repeat="tutorial in vm.relatedTutorials">{{ tutorial }}</div>
+        <div id="RelatedTutorials" ng-repeat="tutorial in vm.pattern.relatedTutorials">{{ tutorial }}</div>
     </div>
     <!-- One of Beginner, Intermediate or Advanced -->
-    <div id="Difficulty">{{ vm.difficulty }}</div>
-    <div id="LaunchDate">{{ vm.launchDate }}</div>
+    <div id="Difficulty">{{ vm.pattern.difficulty }}</div>
+    <div id="LaunchDate">{{ vm.pattern.launchDate }}</div>
     <!-- One of Free, 5 or 7 (maybe think of better names?) -->
-    <div id="PriceCategory">{{ vm.priceCategory }}</div>
+    <div id="PriceCategory">{{ vm.pattern.priceCategory }}</div>
     <!-- Number of Ravelry projects - to be scraped from ravelry regularly -->
-    <div id="Popularity">{{ vm.popularity }}</div>
+    <div id="Popularity">{{ vm.pattern.popularity }}</div>
     <div>
-        <a id="BlogPosts" ng-repeat="article in vm.blogPosts" href="{{ article.url }}">{{ article.name }}</a>
+        <a id="BlogPosts" ng-repeat="article in vm.pattern.blogPosts" href="{{ article.url }}">{{ article.name }}</a>
     </div>
     <!-- Free Text or HTML? -->
-    <div id="Notes">{{ vm.notes }}</div>
+    <div id="Notes">{{ vm.pattern.notes }}</div>
     <!-- // One of Text, Charts or Both  -->
-    <div id="DescriptionType">{{ vm.descriptionType }}</div>
+    <div id="DescriptionType">{{ vm.pattern.descriptionType }}</div>
 </div>

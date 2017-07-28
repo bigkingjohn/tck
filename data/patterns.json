@@ -1,56 +1,69 @@
-{
-  Name: '',
-  Subtitle: '',
-  BeautyText: '',// may need to be html.
-  Sizing: ?,
-  Yarns [
-    {
-      Name: '',
-      Brand: '',
-      Weight: ''// ?
-    },
-    ...
-  ],
-  Needles: [
-    {
-      Size: '',
-      Type: '',// circular or dpn
-      Length: ''// only applicable to circular needles
-    },
-    ...
-  ],
-  Book: '',//. Book Name
-  RelatedPatterns: [
-    '',// Pattern Name
-    ...
-  ],
-  PurchaseLink: '',
-  RavelryUrl: '',
-  RavelryButton: '',// html for the button?
-  Type: '',// One of Garment, Hands, Feet, Hat, Neck, Home?
-  RecommendedYarnWeight: [
-    '',// One of Lace, Sock, Sport, DK, Worsted/Aran, Bulky
-    ...
-  ],
-  Attributes: [
-    ?
-  ],
-  Construction: [
-    '',// One of Colourwork, Cables, Texture, Lace, Basic Knit & Purl?
-    ...
-  ],
-  RelatedTutorials: [
-    '',// Tutorial Name
-    ...
-  ],
-  Difficulty: '',// One of Beginner, Intermediate or Advanced
-  LaunchDate: '',
-  PriceCategory: '',// One of Free, 5 or 7 (maybe think of better names?)
-  Popularity: ?,// Number of Ravelry projects - to be scraped from ravelry regularly
-  BlgPosts: [
-    '',// One or more URLs
-    ...
-  ],
-  Notes: '',// Free Text or HTML?
-  DescriptionType: ''// One of Text, Charts or Both
-}
+[
+  {
+    Name: '',
+    Subtitle: '',
+    BeautyText: '',// may need to be html.
+    Sizing: {
+      Type: '', // e.g Sweater, hat, mittens,
+      columns: ['', '', ''] // labels
+      rows: [
+        {
+          label: '',
+          data: []
+        },
+        ...
+      ],
+    }
+    Yarns [
+      {
+        Name: 'Super Wash Worsted',
+        Brand: 'Sweet Georgia',
+        Weight: 'Worsted',
+        Colourway: ['', '']
+      },
+      ...
+    ],
+    Needles: [
+      {
+        Size: '',
+        Type: '',// circular or dpn
+        Length: ''// only applicable to circular needles
+      },
+      ...
+    ],
+    Book: '',//. Book Name
+    RelatedPatterns: [
+      '',// Pattern Name
+      ...
+    ],
+    PurchaseLink: '',// purchase now and add to ravelry cart?
+    RavelryUrl: '',
+    RavelryButton: '',// html for the button?
+    Type: ['', ...],// One or more of Garment, Hands, Feet, Hat, Neck, Home?
+    RecommendedYarnWeight: [
+      '',// One or more of Lace, Sock, Sport, DK, Worsted/Aran, Bulky
+      ...
+    ],
+    Attributes: [
+      '',// One or more of Colourwork, Cables, Texture, Lace, Basic Knit & Purl?
+      ...
+    ],
+    Construction: [
+      '', // one or more of seamless, worked flat, worked in the round, bottom up, top down
+      ...
+    ],
+    RelatedTutorials: [
+      '',// Tutorial Name
+      ...
+    ],
+    LaunchDate: '',
+    PriceCategory: '',// One of Free, 5 or 7 (maybe think of better names?)
+    Popularity: ?,// Number of Ravelry projects - to be scraped from ravelry regularly
+    BlgPosts: [
+      '',// One or more URLs? or labels identifiers.
+      ...
+    ],
+    Notes: '',// Free Text: Describes the construction/process/techniques (Free Text or HTML)?
+    DescriptionType: ''// One of Text, Charts or Both
+  }
+]

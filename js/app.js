@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('tck', ['ui.router']);
+        .module('tck', ['ui.router', 'ngLodash']);
 })();
 
 
