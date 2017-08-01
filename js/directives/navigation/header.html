@@ -1,0 +1,16 @@
+<div class="header">
+    <img src="images/LOGO-text.png"/>
+    <div class="navbar">
+        <span ng-repeat="page in vm.pages" ng-click="page.goto()" >{{ page.title }}</span>
+    </div>
+<!--     <div class="navNarrow">
+        <i class="material-icons navMenuToggle" ng-click="vm.slideMenuIn()">menu</i>
+        <div class="navMenu" ng-class="!vm.showMenu ? 'navMenuHidden' : ''" ng-click="vm.slideMenuOut()">
+            <div class="navBackground">
+                <div class="navButtons">
+                    <div ng-repeat="page in vm.navPages" ng-click="page.goto()" >{{page.title}}</div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

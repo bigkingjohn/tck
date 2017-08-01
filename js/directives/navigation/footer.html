@@ -1,0 +1,10 @@
+<div class="footer">
+    <div class="footerBar">
+        <span ng-repeat="page in vm.footerBar" ng-click="page.goto()" >{{ page.title }}</span>
+    </div>
+    <div class="socialButtons">
+        <a ng-repeat="button in vm.socialButtons" href="{{ button.url }}">
+            <img class="footerSocial" src="{{ button.image }}"/>
+        </a>
+    </div>
+</div>
